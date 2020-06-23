@@ -3,19 +3,19 @@ import Login from './components/Login';
 import Impressions from './components/Impressions';
 import './App.css';
 
-function App() {
-  const [token, setToken] = useState(null);
+export default function App() {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    setToken(getTokenFromParam())
+    setUser(getUserFromParam())
   }, [])
   
   return (
     <div className="App">
       <header className="App-header">
         Jaygi
-        {token 
-          ? <Impressions token={token}/> 
+        {user 
+          ? <Impressions user={user}/> 
           : <Login />
         }
       </header>
@@ -23,10 +23,8 @@ function App() {
   );
 }
 
-function getTokenFromParam() {
+function getUserFromParam() {
   let url = new URL(window.location)
-  let token = url.searchParams.get("accessToken");
-  return token;
+  let user = url.searchParams.get("user");
+  return user;
 }
-
-export default App;
