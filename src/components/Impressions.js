@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../App.css';
+import DailyImpression from './DailyImpression';
 
 export default function Impressions(props) {
   const [todaysImpression, setTodaysImpression] = useState(null);
@@ -18,21 +18,11 @@ export default function Impressions(props) {
 
   return (
     <div>
-      Impressions <br/><br/>
-      {todaysImpression
+      {
+      todaysImpression
         ? <DailyImpression todaysImpression={todaysImpression} />
         : <button onClick={() => getTodaysImpression(props.user)}>Get Today's Impression</button>
       }
     </div>
   );
-}
-
-function DailyImpression(props) {
-  return (
-    <div>
-      Todays Impression
-      <br/>
-      {props.todaysImpression}
-    </div>
-  )
 }

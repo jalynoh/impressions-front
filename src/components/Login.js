@@ -5,7 +5,6 @@ export default function Login() {
 
   return (
     <div>
-      Login Component
       <a href={ authUrl }>Login to Spotify</a>
     </div>
   );
