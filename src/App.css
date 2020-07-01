@@ -2,5 +2,22 @@
   font-family: 'Roboto', sans-serif;
   background-color: #F2F2F2;
   min-height: 100vh;
-  padding: 2% 2% 2% 2%;
+  padding: 7% 2% 2% 2%;
+}
+
+.center-div {
+  margin: 0 auto;
+  max-width: 912px;
+}
+
+.main-font-color {
+  color: #1A6340;
+}
+
+.heading-font-size {
+  font-size: 6vw;
+}
+
+.footer-font-size {
+  font-size: 24px;
 }

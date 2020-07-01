@@ -12,12 +12,17 @@ export default function App() {
   }, [])
   
   return (
-    <div className="app">
+    <div className="app main-font-color">
+      <div className="center-div text-center heading-font-size">
+        impressions.page
+      </div>
+      <div>
         {user ? <Impressions user={user}/> : <Login />}
-        {/* <footer className="main-font-color footer-font-size text-right">
-          <div>design inspired by</div>
-          <div><a href="https://wherearetheblackdesigners.com/" className="main-font-color">wherearetheblackdesigners.com</a></div>
-        </footer> */}
+      </div>
+      {/* <footer className="main-font-color footer-font-size text-right">
+        <div>see more work at</div>
+        <div><a href="https://jalyns.page/" className="main-font-color">jalyns.page</a></div>
+      </footer> */}
     </div>
   );
 }

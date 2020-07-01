@@ -1,15 +1,10 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import ProgressBar from 'react-animated-progress-bar';
 
 export default function DailyImpression(props) {
   return (
-    <Card bg={'light'}>
-      <Card.Header as="h5">Today's Date</Card.Header>
-      <Card.Body>
-        <Card.Text>
-          {props.todaysImpression}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div>
+      This will be a progress bar {props.todaysImpression}
+    </div>
   );
 }

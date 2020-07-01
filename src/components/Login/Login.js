@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../App.css';
 import './Login.css';
 import { FaSpotify } from 'react-icons/fa';
 
@@ -6,16 +7,13 @@ export default function Login() {
   const authUrl = new URL("http://localhost:7001/impressions/auth/authorize");
 
   return (
-    <div className="login-wrapper main-font-color">
-      <div>
-        <div className="heading-font-size login-text-margin-bottom">impressions.page</div>
-        <div className="text-left login-text-margin login-text-margin-bottom">
-          <div className="sub-font-size">Explore your</div>
-          <div className="sub-font-size">listening patterns</div>
-        </div>
-        <div className="sub-font-size text-right">
-          <a href={authUrl} className="main-font-color">Login to Spotify<FaSpotify size="2em"/>{'>>'}</a>
-        </div>
+    <div className="center-div sub-font-size">
+      <div className="text-left login-text-margin-top">
+        <div>Explore your</div>
+        <div>listening patterns</div>
+      </div>
+      <div className="login-text-right login-text-margin-top">
+        <a href={authUrl} className="main-font-color">Login to Spotify<FaSpotify size="2em"/>{'>>'}</a>
       </div>
     </div>
   );
