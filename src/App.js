@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
 
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import Impressions from './components/Impressions';
 
 export default function App() {
@@ -14,15 +12,13 @@ export default function App() {
   }, [])
   
   return (
-    <div className="App">
-      <Navbar>
-        <Navbar.Brand><span className="h1">Impressions</span></Navbar.Brand>
-      </Navbar>
-      <div>
+    <div className="app">
         {user ? <Impressions user={user}/> : <Login />}
-      </div>
+        {/* <footer className="main-font-color footer-font-size text-right">
+          <div>design inspired by</div>
+          <div><a href="https://wherearetheblackdesigners.com/" className="main-font-color">wherearetheblackdesigners.com</a></div>
+        </footer> */}
     </div>
-
   );
 }
 
