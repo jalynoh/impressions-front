@@ -1,5 +1,4 @@
 import React from 'react';
-import ProgressBar from 'react-animated-progress-bar';
 
 export default function DailyImpression(props) {
   return (

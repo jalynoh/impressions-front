@@ -4,25 +4,37 @@ import './App.css';
 import Login from './components/Login/Login';
 import Impressions from './components/Impressions';
 
-export default function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    setUser(getUserFromParam())
-  }, [])
-  
+const titledLogin = () => {
   return (
-    <div className="app main-font-color">
-      <div className="center-div text-center heading-font-size">
+    <div className="div-center">
+      <div className="heading-font-size">
+        impressions.page
+      </div>
+      <Login />
+    </div>
+  );
+}
+
+const titledImpressions = (user) => {
+  return (
+    <div>
+      <div className="heading-font-size">
         impressions.page
       </div>
       <div>
-        {user ? <Impressions user={user}/> : <Login />}
+        <Impressions user={user}/>
       </div>
-      {/* <footer className="main-font-color footer-font-size text-right">
-        <div>see more work at</div>
-        <div><a href="https://jalyns.page/" className="main-font-color">jalyns.page</a></div>
-      </footer> */}
+    </div>
+  );
+}
+
+export default function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => { setUser(getUserFromParam()) }, [])
+
+  return (
+    <div>
+      { user ? titledImpressions(user) : titledLogin() }
     </div>
   );
 }

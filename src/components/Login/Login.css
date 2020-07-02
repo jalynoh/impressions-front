@@ -2,8 +2,16 @@
   font-size: 3vw;
 }
 
-.login-text-margin-top {
-  margin-top: 8%;
+.login-margin-bottom {
+  margin-bottom: 20%;
+}
+
+.login-text-margin {
+  margin-top: 8vh;
+}
+
+.login-button-margin {
+  margin-top: 5vh;
 }
 
 .login-text-right {
@@ -14,8 +22,8 @@ a:hover {
   color: #e5da9c
 }
 
-@media screen and (max-width: 980px) {
+/* @media screen and (max-width: 720px) {
   .login-text-right {
     text-align: left;
   }
-}
+} */
