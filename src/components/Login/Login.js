@@ -7,7 +7,7 @@ export default function Login() {
   const authUrl = new URL("http://localhost:7001/impressions/auth/authorize");
 
   return (
-    <div className="sub-font-size">
+    <div className="login-sub-font-size">
       <div className="login-text-margin">
         <div>Explore your</div>
         <div>listening patterns</div>

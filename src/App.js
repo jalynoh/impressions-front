@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import Login from './components/Login/Login';
-import Impressions from './components/Impressions';
+import Impressions from './components/Impressions/Impressions';
 
 const titledLogin = () => {
   return (
     <div className="div-center">
-      <div className="heading-font-size">
-        impressions.page
-      </div>
+      <div className="heading-font-size">impressions.page</div>
       <Login />
     </div>
   );
@@ -17,13 +15,9 @@ const titledLogin = () => {
 
 const titledImpressions = (user) => {
   return (
-    <div>
-      <div className="heading-font-size">
-        impressions.page
-      </div>
-      <div>
-        <Impressions user={user}/>
-      </div>
+    <div className="div-center">
+      <div className="heading-font-size text-center">impressions.page</div>
+      <Impressions user={user}/>
     </div>
   );
 }

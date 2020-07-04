@@ -13,9 +13,9 @@ body {
 
 .div-center {
   position: absolute;
-  top: 30%;
+  top: 15%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -15%);
 }
 
 .main-font-color {

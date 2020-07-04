@@ -1,0 +1,16 @@
+.progressbar-background {
+  background-color: #E0E0E0;
+  height: 9vh;
+  border-radius: 50vh;
+}
+
+.progressbar-filler {
+  background: #1DA598;
+  height: 100%;
+  border-radius: inherit;
+  transition: width .3s ease-in;
+}
+
+.progressbar-font-size {
+  font-size: 3vw;
+}

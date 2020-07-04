@@ -1,4 +1,4 @@
-.sub-font-size {
+.login-sub-font-size {
   font-size: 3vw;
 }
 
@@ -15,7 +15,7 @@
 }
 
 a:hover {
-  color: #e5da9c
+  color: #E5DA9C;
 }
 
 /* @media screen and (max-width: 720px) {
