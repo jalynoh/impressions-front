@@ -66,7 +66,7 @@ export default function Impressions(props) {
   useEffect(() => {
     setPrevDate(resolvePrevDate(currDate));
     setNextDate(resolveNextDate(currDate));
-    fetchTodaysImpression(props.user)
+    fetchTodaysImpression(props.token)
       .then(data => ((data === "ERROR") ? setError(true) : setTodaysImpression(data)));
   }, []);
 

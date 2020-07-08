@@ -13,28 +13,34 @@ const titledLogin = () => {
   );
 }
 
-const titledImpressions = (user) => {
+const titledImpressions = (token) => {
   return (
     <div className="div-center">
       <div className="heading-font-size text-center">impressions.page</div>
-      <Impressions user={user}/>
+      <Impressions token={ token }/>
     </div>
   );
 }
 
 export default function App() {
-  const [user, setUser] = useState(null);
-  useEffect(() => { setUser(getUserFromParam()) }, [])
+  const [token, setToken] = useState(null);
+  useEffect(() => { setToken(getHashParams().access_token) }, [])
 
   return (
     <div>
-      { user ? titledImpressions(user) : titledLogin() }
+      { token ? titledImpressions(token) : titledLogin() }
     </div>
   );
 }
 
-function getUserFromParam() {
-  let url = new URL(window.location)
-  let user = url.searchParams.get("user");
-  return user;
+function getHashParams() {
+  let hashParams = {};
+  let e, r = /([^&;=]+)=?([^&;]*)/g,
+      q = window.location.hash.substring(1);
+  e = r.exec(q);
+  while (e) {
+    hashParams[e[1]] = decodeURIComponent(e[2]);
+    e = r.exec(q);
+  }
+  return hashParams;
 }
