@@ -13,11 +13,14 @@ export const getLastFiftyImpressions = async (token, date) => {
     return ("ERROR");
   }
 
+  // Link artists to valence and return list with { artists: <example>, track: <example>, valence: <example> }
+
   // Calculate average
   let valenceAvg = 0;
   audioFeaturesData.audio_features.forEach(audioFeature => valenceAvg += audioFeature.valence);
   valenceAvg = valenceAvg / audioFeaturesData.audio_features.length;
 
+  console.log(Math.round(valenceAvg * 100));
   return Math.round(valenceAvg * 100);
 }
 
@@ -25,11 +28,11 @@ const getRecentlyPlayed = (token, date) => {
   const baseUrl = "https://api.spotify.com/v1/me/player/recently-played";
   const limit = 50; // Spotify max
   date.setHours(23,59,59,999);
-  const after = (date.valueOf()) * 1000; // Unix time in milliseconds
+  const before = (date.valueOf()) * 1000; // Unix time in milliseconds
 
   let recentlyPlatedUrl = new URL(baseUrl);
   recentlyPlatedUrl.searchParams.append("limit", limit);
-  recentlyPlatedUrl.searchParams.append("before", after);
+  recentlyPlatedUrl.searchParams.append("before", before);
 
   const options = {
     method: 'GET',

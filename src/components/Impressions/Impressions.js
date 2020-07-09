@@ -47,14 +47,13 @@ const resolveNextDateStatus = (nextDate) => {
   const inactiveFontColor = "#C4C4C4";
 
   const today = new Date();
+
+  nextDate.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
   if (nextDate > today) {
     return inactiveFontColor;
   }
   return activeFontColor;
-}
-
-const getDaysImpressions = () => {
-  return null;
 }
 
 export default function Impressions(props) {
@@ -70,7 +69,7 @@ export default function Impressions(props) {
 
     spotifyService.getLastFiftyImpressions(props.token, currDate)
       .then(data => ((data === "ERROR") ? setError(true) : setTodaysImpression(data)));
-  }, []);
+  }, [currDate]);
 
   if (error) { return <div>Error...</div> }
   if (todaysImpression === 0) { return <div>No music heard today...</div> }
@@ -80,7 +79,7 @@ export default function Impressions(props) {
     <div className="impressions-table impressions-margin">
       <div className="impressions-table-row">
         <div className="impressions-table-cell impressions-side-date-font-size text-left">
-          <button className="main-font-color">
+          <button onClick={ () => setCurrDate(prevDate) } className="main-font-color">
             {'<<'} { getDisplayDate(prevDate) }
           </button>
         </div>
@@ -89,10 +88,13 @@ export default function Impressions(props) {
           <ProgressBar percentage={ todaysImpression } />
         </div>
         <div className="impressions-table-cell impressions-side-date-font-size text-right">
-          <button className="main-font-color" style={{ color: resolveNextDateStatus(nextDate) }}>
+          <button onClick={ () => setCurrDate(nextDate) } className="main-font-color" style={{ color: resolveNextDateStatus(nextDate) }}>
             { getDisplayDate(nextDate) } {'>>'}
           </button>
         </div>
+      </div>
+      <div>
+        This is where a table of songs will go
       </div>
     </div>
   );
