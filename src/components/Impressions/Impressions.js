@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import * as spotifyService from '../../service/SpotifyService';
 import './Impressions.css';
 import '../../App.css';
 
@@ -66,7 +67,8 @@ export default function Impressions(props) {
   useEffect(() => {
     setPrevDate(resolvePrevDate(currDate));
     setNextDate(resolveNextDate(currDate));
-    fetchTodaysImpression(props.token)
+
+    spotifyService.getLastFiftyImpressions(props.token, currDate)
       .then(data => ((data === "ERROR") ? setError(true) : setTodaysImpression(data)));
   }, []);
 
