@@ -93,9 +93,6 @@ export default function Impressions(props) {
           </button>
         </div>
       </div>
-      <div>
-        This is where a table of songs will go
-      </div>
     </div>
   );
 }
