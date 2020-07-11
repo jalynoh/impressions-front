@@ -6,13 +6,14 @@ import { FaSpotify } from 'react-icons/fa';
 export default function Login() {
   const baseUrl = "https://accounts.spotify.com/authorize";
   const clientId = "848cb762ea6c478e89c1016a2bb4b9a6";
-  const redirectUri = "http://localhost:3000";
+  const localRedirectUri = "http://localhost:3000";
+  const herokuRedirectUri = "http://murmuring-anchorage-51448.herokuapp.com";
   const scopes = "user-read-recently-played";
   const responseType = "token";
 
   let authUrl = new URL(baseUrl);
   authUrl.searchParams.append("client_id", clientId);
-  authUrl.searchParams.append("redirect_uri", redirectUri);
+  authUrl.searchParams.append("redirect_uri", herokuRedirectUri);
   authUrl.searchParams.append("scope", scopes);
   authUrl.searchParams.append("response_type", responseType);
 
